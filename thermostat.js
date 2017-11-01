@@ -28,15 +28,23 @@
 });
 /*********************Ne pas modifier***********************/
 
-var setTime;
-
 $(document).ready(function(){
-  console.log(temperatureInterieure);  
-  window.setTimeout(function() {
-    ticTac();
-    console.log(temperatureInterieure);    
-  }, 2000);
+  console.log(temperatureInterieure);
+  console.log("debut boucle");
+  chrono();
 })
+
+function chrono(){
+  window.setTimeout(function() {
+    recalculerTemp();
+    chrono();
+  }, intervalleTemps);
+}
+
+function recalculerTemp(){
+    ticTac();
+    document.getElementById("tempInterieure").innerHTML = temperatureInterieure;
+}
 
 
 
