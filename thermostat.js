@@ -29,30 +29,11 @@
 /*********************Ne pas modifier***********************/
 
 $(document).ready(function(){
-  //chrono();
   ObservableChambre.chrono();  
 })
 
-function chrono(){
-  window.setTimeout(function() {
-    recalculerTemp();
-    chrono();
-  }, intervalleTemps);
-}
-
-function recalculerTemp(){
-    ticTac();
-    document.getElementById("tempInterieure").innerHTML = temperatureInterieure;
-}
-
 var ObservableChambre = {
-  Donnees: {
-    tempExterieure: temperatureExterieure,
-    tempInterieure: temperatureInterieure,
-    chau: chauffage,
-    tempThermostat: temperatureThermostat
-  }
-,  observers: []
+  observers: []
 , addObserver: function(observer) {
     this.observers.push(observer)
   }
@@ -65,7 +46,6 @@ var ObservableChambre = {
     }
   }
 , notifyObservers: function() {
-    console.log(Donnees);
     for (var i = this.observers.length - 1; i >= 0; i--) {
       this.observers[i](Donnees);
     };
@@ -73,10 +53,16 @@ var ObservableChambre = {
 
 , chrono: function() {
     window.setTimeout(function(){
-      recalculerTemp();
-      console.log(this.Donnees);
-      this.notifyObservers();
-      chrono();
+      ticTac();
+      var Donnees = {
+        "temperatureExterieure": temperatureExterieure,
+        "temperatureInterieure": temperatureInterieure,
+        "chauffage": chauffage,
+        "temperatureThermostat": temperatureThermostat,
+      }
+      console.log(Donnees);
+      //this.notifyObservers;
+      this.chrono;
     }, intervalleTemps);
   }
 }
