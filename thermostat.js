@@ -29,8 +29,16 @@
 /*********************Ne pas modifier***********************/
 
 $(document).ready(function(){
-  ObservableChambre.chrono();  
+  ObservableChambre.addObserver(ObserverThermometre);
+  chrono();  
 })
+
+function chrono(){
+  window.setTimeout(function(){
+    ObservableChambre.recalculerTemp();
+    chrono();    
+  }, intervalleTemps);
+}
 
 var ObservableChambre = {
   observers: []
@@ -45,14 +53,13 @@ var ObservableChambre = {
       this.observers.splice(index, 1)
     }
   }
-, notifyObservers: function() {
+, notifyObservers: function(Donnees) {
     for (var i = this.observers.length - 1; i >= 0; i--) {
-      this.observers[i](Donnees);
+      this.observers[i].update(Donnees);
     };
   }
 
-, chrono: function() {
-    window.setTimeout(function(){
+, recalculerTemp: function() {
       ticTac();
       var Donnees = {
         "temperatureExterieure": temperatureExterieure,
@@ -60,14 +67,14 @@ var ObservableChambre = {
         "chauffage": chauffage,
         "temperatureThermostat": temperatureThermostat,
       }
-      console.log(Donnees);
-      //this.notifyObservers;
-      this.chrono;
-    }, intervalleTemps);
+      this.notifyObservers(Donnees);
   }
 }
 
 var ObserverThermometre = {
+  update: function(Donnees){
+    document.getElementById("temperatureInterieure").innerHTML = Donnees.temperatureInterieure;
+  }
 }
 
 var ObserverInfoChambre = {
