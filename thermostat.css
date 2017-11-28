@@ -1,0 +1,77 @@
+body {
+    background-color: #eee !important;    
+}
+
+#glisseur {
+    padding-right: 5px;
+    width:25%;
+    float: right;
+    padding-top: 30px;
+}
+
+#grosDiv {
+    background-color: #eee;
+    padding-top: 40px;
+    padding-left: 40px; 
+    padding-right:20px;
+    float:left;
+    height:100%;
+    width: 100%;
+    
+}
+
+#thermo {
+    padding-top: 100px;
+    width:25%;
+    float: left;
+    height: 100%;
+}
+
+#info{
+   width:50%;
+   float: left;
+   padding-left: 30px;
+   padding-top: 100px;
+}
+
+.progress {
+    transform: rotate(-90deg);
+    border: solid 1px;
+    border-color: #7B899C;
+}
+
+.progress-bar {
+    background-image: none !important;
+    background-color:#A40000 !important;
+}
+
+#temperatureInterieure {
+    transform: rotate(180deg);
+}
+
+#thermostat {
+    height: 150px;
+    width:7px;
+}
+
+#texteGhetto {
+    padding-left: 80px;
+    padding-top: 220px;
+}
+.echelle {
+    padding-top:20;
+}
+
+.conteneurEchelle{
+    float:right;
+    margin-top: 50px;
+    padding-right:50px;
+    width:100%;
+}
+#slider label {
+    position: absolute;
+    width: 20px;
+    margin-top: 20px;
+    margin-left: -10px;
+    text-align: center;
+  }

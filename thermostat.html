@@ -13,6 +13,13 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!--    FIN DES INCLUSIONS      -->
 
     <script type="text/javascript" src="chambre.js"></script>
@@ -24,7 +31,41 @@
 </html>
 
 <body>
-    <div id="thermostat"></div>
-    <p id="tdValeurThermostat">20</p>
-    <p>Température intérieure: <span id="temperatureInterieure"></span></p>
+    <div>
+        <div id="grosDiv">
+            <div id="thermo">
+                <div class="progress">
+                    <div id="thermometre" class="progress-bar" role="progressbar" aria-valuenow="70"
+                    aria-valuemin="-50" aria-valuemax="50"> <span id="temperatureInterieure"> </div>
+                </div> 
+                
+                
+            </div>
+            <div id="info">
+                <table id="tableau">
+                    <tr>
+                        <td class="colGauche">Chauffage:</td>
+                        <td id="infoChauffage"></td>
+                    </tr>
+                    <tr>
+                        <td class="colGauche">Temperature exterieure:   </td>
+                        <td id="infoExterieur"></td>
+                    </tr>
+                    <tr>
+                        <td class="colGauche">Thermostat:</td>
+                        <td id="infoThermostat"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="glisseur">
+                <div id="thermostat" ></div>
+                <p id="tdValeurThermostat">20</p>
+                <p>Thermostat</p>
+            </div>
+        </div>
+       
+    </div>
+    <div>
+    <p id="texteGhetto"> Thermometre</p>
+
 </body>
