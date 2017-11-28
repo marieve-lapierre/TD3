@@ -2,12 +2,7 @@ body {
     background-color: #eee !important;    
 }
 
-#glisseur {
-    padding-right: 5px;
-    width:25%;
-    float: right;
-    padding-top: 30px;
-}
+/* Section globale */
 
 #grosDiv {
     background-color: #eee;
@@ -17,8 +12,9 @@ body {
     float:left;
     height:100%;
     width: 100%;
-    
 }
+
+/* Section thermometre */
 
 #thermo {
     padding-top: 100px;
@@ -27,17 +23,11 @@ body {
     height: 100%;
 }
 
-#info{
-   width:50%;
-   float: left;
-   padding-left: 30px;
-   padding-top: 100px;
-}
-
 .progress {
     transform: rotate(-90deg);
     border: solid 1px;
     border-color: #7B899C;
+    width: 150px;
 }
 
 .progress-bar {
@@ -49,29 +39,61 @@ body {
     transform: rotate(180deg);
 }
 
+#texteThermometre {
+    padding-left: 40px;
+    padding-top: 50px;
+}
+
+/* Section centrale */
+
+#info{
+   width:30%;
+   float: left;
+   padding-left: 30px;
+   padding-top: 100px;
+}
+
+#infoChauffage {
+    padding-right: 10px;
+}
+  
+.colGauche {
+    padding-right: 20px;
+}
+
+/* Section thermostat */
+
+#conteneurThermostat{
+    text-align: left;
+    display: inline-block;
+    float: right;
+    width: 30%;
+}
+
+#glisseur {
+    padding-right: 5px;
+    width: 10px;
+    padding-top: 30px;
+    float: left;
+}
+
 #thermostat {
     height: 150px;
     width:7px;
 }
 
-#texteGhetto {
-    padding-left: 80px;
-    padding-top: 220px;
-}
-.echelle {
-    padding-top:20;
+#conteneurEchelle{
+    text-align:left;
+    margin-top: 48px;
 }
 
-.conteneurEchelle{
-    float:right;
-    margin-top: 50px;
-    padding-right:50px;
-    width:100%;
+.echelle {
+    height: 30px;
 }
-#slider label {
-    position: absolute;
-    width: 20px;
-    margin-top: 20px;
-    margin-left: -10px;
+
+#texteThermostat {
+    padding-left: 160px;
+    float: right;
     text-align: center;
-  }
+    width: 70%;
+}

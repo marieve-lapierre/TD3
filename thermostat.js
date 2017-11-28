@@ -29,8 +29,8 @@
 /*********************Ne pas modifier***********************/
 
 $(document).ready(function(){
-  ObservableChambre.addObserver(ObserverThermometre);
-  ObservableChambre.addObserver(ObserverInfoChambre);
+  ObservableChambre.addObserver(ObservateurThermometre);
+  ObservableChambre.addObserver(ObservateurInfoChambre);
   chrono();  
 })
 
@@ -71,7 +71,7 @@ var ObservableChambre = {
   }
 }
 
-var ObserverThermometre = {
+var ObservateurThermometre = {
   update: function(Donnees){
     document.getElementById("temperatureInterieure").innerHTML = Math.round(Donnees.temperatureInterieure);
     var data = Donnees.temperatureInterieure + 50;
@@ -79,7 +79,7 @@ var ObserverThermometre = {
   }
 }
 
-var ObserverInfoChambre = {
+var ObservateurInfoChambre = {
   update: function(Donnees){
     if (Donnees.chauffage == true) {
       document.getElementById("infoChauffage").innerHTML = "Actif";
@@ -90,7 +90,6 @@ var ObserverInfoChambre = {
       document.getElementById("infoChauffage").style.backgroundColor = "#fff";
     }
     document.getElementById("infoExterieur").innerHTML = Donnees.temperatureExterieure;
-    document.getElementById("infoThermostat").innerHTML = document.getElementById("tdValeurThermostat").innerHTML;
   }
 }
 
